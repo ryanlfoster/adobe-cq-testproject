@@ -17,24 +17,20 @@ import java.net.URL;
 @Service(WeatherService.class)
 public class WeatherService {
     protected final Logger log = LoggerFactory.getLogger(this.getClass());
-    private final String ENDPOINT_PROPERTY = "service.weather.endpoint";
-    private String endpoint;
+    //    private final String ENDPOINT_PROPERTY = "service.weather.endpoint";
+    private String endpoint = "test";
 
     public WeatherReturn getCityWeatherByZIP(String zip) {
         WeatherReturn result = null;
         log.debug("Endpoint is " + endpoint);
-        try {
-            WeatherSoap client = new Weather(new URL(endpoint)).getWeatherSoap();
-            result = client.getCityWeatherByZIP(zip);
-        } catch (MalformedURLException e) {
-            log.error("MalformedURLException occur", e);
-        }
+        WeatherSoap client = new Weather().getWeatherSoap();
+        result = client.getCityWeatherByZIP(zip);
         return result;
     }
 
-    @Activate
-    protected final void activate(ComponentContext componentContext) {
-        log.debug("WeatherService activating ...");
-        endpoint = (String) componentContext.getProperties().get(ENDPOINT_PROPERTY);
-    }
+//    @Activate
+//    protected final void activate(ComponentContext componentContext) {
+//        log.debug("WeatherService activating ...");
+//        endpoint = (String) componentContext.getProperties().get(ENDPOINT_PROPERTY);
+//    }
 }

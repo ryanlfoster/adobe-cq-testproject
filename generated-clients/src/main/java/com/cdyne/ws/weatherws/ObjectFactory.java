@@ -36,43 +36,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Forecast }
+     * Create an instance of {@link GetCityWeatherByZIPResponse }
      * 
      */
-    public Forecast createForecast() {
-        return new Forecast();
+    public GetCityWeatherByZIPResponse createGetCityWeatherByZIPResponse() {
+        return new GetCityWeatherByZIPResponse();
     }
 
     /**
-     * Create an instance of {@link GetWeatherInformationResponse }
+     * Create an instance of {@link WeatherReturn }
      * 
      */
-    public GetWeatherInformationResponse createGetWeatherInformationResponse() {
-        return new GetWeatherInformationResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCityWeatherByZIP }
-     * 
-     */
-    public GetCityWeatherByZIP createGetCityWeatherByZIP() {
-        return new GetCityWeatherByZIP();
-    }
-
-    /**
-     * Create an instance of {@link Temp }
-     * 
-     */
-    public Temp createTemp() {
-        return new Temp();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfWeatherDescription }
-     * 
-     */
-    public ArrayOfWeatherDescription createArrayOfWeatherDescription() {
-        return new ArrayOfWeatherDescription();
+    public WeatherReturn createWeatherReturn() {
+        return new WeatherReturn();
     }
 
     /**
@@ -92,19 +68,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WeatherReturn }
+     * Create an instance of {@link ArrayOfForecast }
      * 
      */
-    public WeatherReturn createWeatherReturn() {
-        return new WeatherReturn();
+    public ArrayOfForecast createArrayOfForecast() {
+        return new ArrayOfForecast();
     }
 
     /**
-     * Create an instance of {@link GetCityForecastByZIP }
+     * Create an instance of {@link POP }
      * 
      */
-    public GetCityForecastByZIP createGetCityForecastByZIP() {
-        return new GetCityForecastByZIP();
+    public POP createPOP() {
+        return new POP();
     }
 
     /**
@@ -116,11 +92,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArrayOfForecast }
+     * Create an instance of {@link GetWeatherInformationResponse }
      * 
      */
-    public ArrayOfForecast createArrayOfForecast() {
-        return new ArrayOfForecast();
+    public GetWeatherInformationResponse createGetWeatherInformationResponse() {
+        return new GetWeatherInformationResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfWeatherDescription }
+     * 
+     */
+    public ArrayOfWeatherDescription createArrayOfWeatherDescription() {
+        return new ArrayOfWeatherDescription();
+    }
+
+    /**
+     * Create an instance of {@link Forecast }
+     * 
+     */
+    public Forecast createForecast() {
+        return new Forecast();
+    }
+
+    /**
+     * Create an instance of {@link Temp }
+     * 
+     */
+    public Temp createTemp() {
+        return new Temp();
+    }
+
+    /**
+     * Create an instance of {@link GetCityForecastByZIP }
+     * 
+     */
+    public GetCityForecastByZIP createGetCityForecastByZIP() {
+        return new GetCityForecastByZIP();
+    }
+
+    /**
+     * Create an instance of {@link GetCityWeatherByZIP }
+     * 
+     */
+    public GetCityWeatherByZIP createGetCityWeatherByZIP() {
+        return new GetCityWeatherByZIP();
     }
 
     /**
@@ -129,22 +145,6 @@ public class ObjectFactory {
      */
     public ForecastReturn createForecastReturn() {
         return new ForecastReturn();
-    }
-
-    /**
-     * Create an instance of {@link GetCityWeatherByZIPResponse }
-     * 
-     */
-    public GetCityWeatherByZIPResponse createGetCityWeatherByZIPResponse() {
-        return new GetCityWeatherByZIPResponse();
-    }
-
-    /**
-     * Create an instance of {@link POP }
-     * 
-     */
-    public POP createPOP() {
-        return new POP();
     }
 
     /**
