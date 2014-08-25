@@ -1,0 +1,8 @@
+=====================
+DEPLOYING THIS PROJECT
+=====================
+
+0) Start adobe cq instance.
+1) Create 'Apps/PersonRegistry/install' directory through CRXDE.
+2) Execute 'mvn clean install' on parent module.
+3) Open http://localhost:4502/content/PersonRegistry/en/add.html in browser.

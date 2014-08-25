@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspaceFilter version="1.0">
+    <filter root="/apps/PersonRegistry">
+        <exclude pattern="/apps/PersonRegistry/install.*"/>
+        <exclude pattern="/apps/PersonRegistry/runmodes.*"/>
+    </filter>
+    <filter root="/etc/clientlibs/PersonRegistry"/>
+	<filter root="/etc/designs/PersonRegistry">
+        <exclude pattern="/etc/designs/PersonRegistry/jcr:content.*"/>
+    </filter>
+</workspaceFilter>
