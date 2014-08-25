@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>PersonRegistry - PersonRegistry-view</comment>
+<entry key="createdBy">normal</entry>
+<entry key="name">PersonRegistry-view</entry>
+<entry key="created">2014-08-22T16:58:37.577+0400</entry>
+<entry key="groupId">PersonRegistry</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">PersonRegistry</entry>
+<entry key="description">All of the CQ component and template definitions for the 'CQ Blueprints Example' project.
+
+        During development, the files in this module should be sync'd to your CQ instance using the FileVault command
+        line tool available with CQ. There is also a plugin for Eclipse called "vaultclipse" that can be used instead
+        of the command line tool.
+
+        It is recommended that this module not contain any Java code and instead Java code should be placed in either
+        the PersonRegistry-taglib module or the PersonRegistry-services module as appropriate.</entry>
+<entry key="artifactId">PersonRegistry-view</entry>
+<entry key="path">/etc/packages/PersonRegistry/PersonRegistry-view.zip</entry>
+</properties>

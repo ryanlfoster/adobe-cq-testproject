@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component enabled="true" immediate="true" name="ru.spb.yarish.person_registry.service.PersonService">
+        <implementation class="ru.spb.yarish.person_registry.service.PersonService"/>
+        <service servicefactory="false">
+            <provide interface="ru.spb.yarish.person_registry.service.PersonService"/>
+        </service>
+        <property name="service.pid" value="ru.spb.yarish.person_registry.service.PersonService" private="false"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory" checked="true" strategy="event"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="true" name="ru.spb.yarish.person_registry.service.WeatherService" activate="activate">
+        <implementation class="ru.spb.yarish.person_registry.service.WeatherService"/>
+        <service servicefactory="false">
+            <provide interface="ru.spb.yarish.person_registry.service.WeatherService"/>
+        </service>
+        <property name="service.pid" value="ru.spb.yarish.person_registry.service.WeatherService" private="false"/>
+    </scr:component>
+    <scr:component enabled="true" name="ru.spb.yarish.person_registry.servlet.PersonResource">
+        <implementation class="ru.spb.yarish.person_registry.servlet.PersonResource"/>
+        <service servicefactory="false">
+            <provide interface="java.lang.Object"/>
+        </service>
+        <property name="javax.ws.rs" type="Boolean" value="true" private="false"/>
+        <property name="service.pid" value="ru.spb.yarish.person_registry.servlet.PersonResource" private="false"/>
+        <reference name="service" interface="ru.spb.yarish.person_registry.service.PersonService" cardinality="1..1" policy="static" bind="bindService" unbind="unbindService" checked="true" strategy="event"/>
+    </scr:component>
+    <scr:component enabled="true" name="ru.spb.yarish.person_registry.servlet.PersonServiceServlet">
+        <implementation class="ru.spb.yarish.person_registry.servlet.PersonServiceServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths" value="/services/person" private="false"/>
+        <property name="sling.servlet.methods" value="POST" private="false"/>
+        <property name="service.pid" value="ru.spb.yarish.person_registry.servlet.PersonServiceServlet" private="false"/>
+        <reference name="service" interface="ru.spb.yarish.person_registry.service.PersonService" cardinality="1..1" policy="static" bind="bindService" unbind="unbindService" checked="true" strategy="event"/>
+    </scr:component>
+</components>

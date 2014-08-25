@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspaceFilter version="1.0">
+    <filter root="/content/PersonRegistry"/>
+    <filter root="/content/dam/PersonRegistry">
+        <!-- exclude pattern=".*/renditions.*"/ -->
+    </filter>
+    <filter root="/etc/designs/PersonRegistry/jcr:content">
+        <include pattern="/etc/designs/PersonRegistry/jcr:content(/.*)+"/>
+    </filter>
+</workspaceFilter>

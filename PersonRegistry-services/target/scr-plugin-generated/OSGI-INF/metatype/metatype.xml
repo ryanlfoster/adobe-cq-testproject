@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
+    <OCD id="ru.spb.yarish.person_registry.servlet.PersonServiceServlet" name="%ru.spb.yarish.person_registry.servlet.PersonServiceServlet.name" description="%ru.spb.yarish.person_registry.servlet.PersonServiceServlet.description">
+        <AD id="sling.servlet.paths" type="String" default="/services/person" name="%sling.servlet.paths.name" description="%sling.servlet.paths.description"/>
+        <AD id="sling.servlet.methods" type="String" default="POST" name="%sling.servlet.methods.name" description="%sling.servlet.methods.description"/>
+    </OCD>
+    <Designate pid="ru.spb.yarish.person_registry.servlet.PersonServiceServlet">
+        <Object ocdref="ru.spb.yarish.person_registry.servlet.PersonServiceServlet"/>
+    </Designate>
+</metatype:MetaData>
