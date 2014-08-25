@@ -78,28 +78,28 @@
         </dependency>
 
         <!-- Jersey -->
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-apache-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-json</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-server</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.sun.jersey.contribs</groupId>-->
+            <!--<artifactId>jersey-apache-client</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.sun.jersey</groupId>-->
+            <!--<artifactId>jersey-client</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.sun.jersey</groupId>-->
+            <!--<artifactId>jersey-json</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.sun.jersey</groupId>-->
+            <!--<artifactId>jersey-server</artifactId>-->
+        <!--</dependency>-->
 
         <!--for activation properties-->
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.compendium</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.osgi</groupId>-->
+            <!--<artifactId>org.osgi.compendium</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
@@ -117,7 +117,7 @@
                             com.cdyne.ws.weatherws.*;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            !javax.jws,!javax.jws.soap
+                            !javax.jws,!javax.jws.soap,*
                         </Import-Package>
                         <Import-Bundle>
                             *
