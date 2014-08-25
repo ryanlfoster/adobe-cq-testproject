@@ -96,10 +96,10 @@
         <!--</dependency>-->
 
         <!--for activation properties-->
-        <!--<dependency>-->
-            <!--<groupId>org.osgi</groupId>-->
-            <!--<artifactId>org.osgi.compendium</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -110,7 +110,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>ru.spb.yarish.person_registry.osgi.Activator</Bundle-Activator>
                         <Export-Package>
                             ru.spb.yarish.person_registry.service.*,
                             ru.spb.yarish.person_registry.dto.*,
