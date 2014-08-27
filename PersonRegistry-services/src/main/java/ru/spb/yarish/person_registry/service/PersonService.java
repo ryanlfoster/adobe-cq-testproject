@@ -27,13 +27,11 @@ public class PersonService {
     @Reference
     private ResourceResolverFactory resolverFactory;
 
-    public boolean createPerson(Person person) {
+    public boolean createPerson(Person person, ResourceResolver resourceResolver) {
         boolean result = false;
-        Session session = null;
         try {
             //Invoke the adaptTo method to create a Session used to create a QueryManager
-            ResourceResolver resourceResolver = resolverFactory.getAdministrativeResourceResolver(null);
-            session = resourceResolver.adaptTo(Session.class);
+            Session session = resourceResolver.adaptTo(Session.class);
 
             //Create a node that represents the root node
             Node root = session.getRootNode();
@@ -60,12 +58,8 @@ public class PersonService {
             result = true;
         } catch (RepositoryException e) {
             log.error(e.getMessage(), e);
-        } catch (LoginException e) {
-            log.error(e.getMessage(), e);
-        } finally {
-            if (session != null)
-                session.logout();
         }
+
         log.debug("Probably person was created.");
         return result;
     }
@@ -85,12 +79,10 @@ public class PersonService {
         return Long.valueOf(lastChild != null ? lastChild.getName() : null) + 1;
     }
 
-    public List<Person> getPersons() {
+    public List<Person> getPersons(ResourceResolver resourceResolver) {
         List<Person> persons = new ArrayList<Person>();
-        Session session = null;
         try {
-            ResourceResolver resourceResolver = resolverFactory.getAdministrativeResourceResolver(null);
-            session = resourceResolver.adaptTo(Session.class);
+            Session session = resourceResolver.adaptTo(Session.class);
 
             //Obtain the query manager for the session ...
             QueryManager queryManager = session.getWorkspace().getQueryManager();
@@ -116,25 +108,19 @@ public class PersonService {
             }
         } catch (RepositoryException e) {
             log.error("RepositoryException: " + e);
-        } catch (LoginException e) {
-            log.error("RepositoryException: " + e);
-        } finally {
-            if (session != null)
-                session.logout();
         }
+
         log.debug("{} persons were found successfully", persons.size());
 
         return persons;
     }
 
-    public boolean deletePerson(String id) {
+    public boolean deletePerson(String id, ResourceResolver resourceResolver) {
         log.debug("Deleting person with id: {}", id);
         boolean result = false;
-        Session session = null;
         try {
             //Invoke the adaptTo method to create a Session used to create a QueryManager
-            ResourceResolver resourceResolver = resolverFactory.getAdministrativeResourceResolver(null);
-            session = resourceResolver.adaptTo(Session.class);
+            Session session = resourceResolver.adaptTo(Session.class);
 
             //Create a node that represents the root node
             Node root = session.getRootNode();
@@ -147,12 +133,8 @@ public class PersonService {
             result = true;
         } catch (RepositoryException e) {
             log.error("RepositoryException: " + e);
-        } catch (LoginException e) {
-            log.error("RepositoryException: " + e);
-        } finally {
-            if (session != null)
-                session.logout();
         }
+
         log.debug("Successfully deleted.");
         return result;
     }

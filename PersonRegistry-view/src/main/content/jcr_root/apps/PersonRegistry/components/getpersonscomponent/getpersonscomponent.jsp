@@ -5,7 +5,7 @@
 <cq:setContentBundle source="page"/>
 
 <br /><br />
-<pr:getPersons />
+<pr:getPersons resolver="${resourceResolver}" />
 <table id="table" class="table table-striped">
     <tr><th>#</th><th><fmt:message key="first.name" /></th><th><fmt:message key="last.name" /></th><th><fmt:message key="description" /></th><th>-</th></tr>
     <c:forEach items="${persons}" var="item" varStatus="loop">

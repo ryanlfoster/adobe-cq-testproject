@@ -30,7 +30,7 @@ public class PersonResource {
     @GET
     @Path("/list")
     protected Response getPersons(@Context HttpServletRequest request, @Context HttpServletResponse response) {
-        List<Person> persons = service.getPersons();
+        List<Person> persons = service.getPersons(null);
         return Response.ok(gson.toJson(persons)).build();
     }
 
@@ -41,7 +41,7 @@ public class PersonResource {
     public Response addPerson(@Context HttpServletRequest request, @Context HttpServletResponse response) throws IOException {
         log.debug("AddPerson REST resource is invoked.");
         Person person = gson.fromJson(request.getReader(), Person.class);
-        boolean result = service.createPerson(person);
+        boolean result = service.createPerson(person, null);
         return Response.ok(result ? "done!" : "error").build();
     }
 }
